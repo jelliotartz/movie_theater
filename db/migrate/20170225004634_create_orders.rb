@@ -6,9 +6,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer     :credit_card_number
       t.date        :expiration_date
 
-      t.references  :movie
       t.references  :showtime
-      t.references  :auditorium
 
       t.timestamps null: false
     end
