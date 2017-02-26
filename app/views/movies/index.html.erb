@@ -4,6 +4,14 @@
   <% @movies.each do |movie| %>
     <li>
       <%= movie.title %>
+      <% movie.showtimes.each do |showtime| %>
+        <div>
+          <%= showtime_formatter(showtime.time) %>,
+          in <%= movie_auditorium(movie, showtime) %>;
+          Seats Remaining = <%= movie_auditorium_capacity(movie, showtime) %>
+        </div>
+      <button>buy a ticket</button>
+      <% end %>
     </li>
   <% end %>
 </ul>

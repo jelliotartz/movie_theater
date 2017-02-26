@@ -3,9 +3,6 @@ class CreateMovies < ActiveRecord::Migration
     create_table :movies do |t|
       t.string :title
 
-      t.references :showtime
-      t.references :auditorium
-
       t.timestamps null: false
     end
   end
