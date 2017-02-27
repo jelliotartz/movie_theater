@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :movies do
-    resources :orders
-  end
+  resources :movies
+  resources :orders
 end
