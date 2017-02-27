@@ -40,7 +40,11 @@ auditoria = Auditorium.all
 20.times do
   day = rand(1..100)
   hour = rand(1..12)
-  Showtime.create!(time: Time.zone.now + day.days + hour.hours, movie: movies.sample, auditorium: auditoria.sample)
+  Showtime.create!(
+    time: Time.zone.now + day.days + hour.hours,
+    movie: movies.sample,
+    auditorium: auditoria.sample
+  )
 end
 
 showtimes = Showtime.all
@@ -50,7 +54,7 @@ showtimes = Showtime.all
     amount: 10,
     name: "Brock McNuggets",
     email: "brock@mail.com",
-    credit_card_number: 1234123412341234,
+    credit_card_number: 378282246310005,
     expiration_date: "12/09/2017",
     showtime: showtimes.sample
   )

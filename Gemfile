@@ -28,7 +28,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'pry-rails'
 gem 'pry-theme'
-
+gem 'validates_formatting_of'
+gem 'validates_timeliness', '~> 4.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
