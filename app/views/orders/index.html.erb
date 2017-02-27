@@ -1,0 +1,12 @@
+<h1>All Orders</h1>
+
+<ul>
+  <% @orders.each do |order| %>
+    <li>
+      <%= order.name %>
+      <%= order.email %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "<< Back to Movies", movies_path %>

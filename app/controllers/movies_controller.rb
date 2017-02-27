@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
-    @orders = Order.all
   end
 
   def show
@@ -17,7 +16,7 @@ class MoviesController < ApplicationController
     @movie.title = params[:movie][:title]
     # @movie.showtimes.time = params[:movie][:showtime]
     # @movie.auditorium = params[:movie][:auditorium]
-    @movie.save
+    @movie.save!
     redirect_to movie_path(@movie)
   end
 end
