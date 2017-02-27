@@ -1,6 +1,8 @@
+<%= link_to "Manage your movie theater", admin_root_path %>
+
 <h1>All Movies</h1>
 
-<ul id="movies">
+<ul>
   <% @movies.each do |movie| %>
     <li>
       <%= movie.title %>
@@ -15,6 +17,3 @@
     </li>
   <% end %>
 </ul>
-
-
-<%= link_to "Add a new movie", new_movie_path %>

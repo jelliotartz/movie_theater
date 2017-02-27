@@ -30,6 +30,8 @@ gem 'pry-rails'
 gem 'pry-theme'
 gem 'validates_formatting_of'
 gem 'validates_timeliness', '~> 4.0'
+gem 'administrate', '~>0.3.0'
+gem 'bourbon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
