@@ -42,13 +42,14 @@ ActiveRecord::Schema.define(version: 20170226202852) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.integer  "amount"
     t.string   "name"
     t.string   "email"
-    t.integer  "credit_card_number"
+    t.integer  "credit_card_number", limit: 16
     t.date     "expiration_date"
-    t.integer  "showtime_id",        null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "showtime_id",                   null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "showtimes", force: :cascade do |t|

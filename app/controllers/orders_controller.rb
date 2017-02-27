@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     @order.email = params[:order][:email]
     @order.credit_card_number = params[:order][:credit_card_number]
     @order.expiration_date = params[:order][:expiration_date]
-    # TODO: why can we not get @showtime from new?
+    # TODO: why can't I get @showtime from new?
     @order.showtime_id = params[:showtime]
     @order.save!
 
