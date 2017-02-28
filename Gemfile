@@ -23,15 +23,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Add bootstrap 3
-gem 'bootstrap-sass', '~> 3.3.6'
-
 gem 'pry-rails'
 gem 'pry-theme'
 gem 'validates_formatting_of'
 gem 'validates_timeliness', '~> 4.0'
 gem 'administrate', '~>0.3.0'
 gem 'bourbon'
+gem 'mailgun-ruby', '~>1.1.4'
+gem 'neat'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

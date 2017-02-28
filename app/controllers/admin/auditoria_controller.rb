@@ -1,17 +1,18 @@
 module Admin
   class AuditoriaController < Admin::ApplicationController
+    def new
+      super
+      @auditorium = Auditorium.new
+    end
 
-      def new
-        super
-        @auditorium = Auditorium.new
-      end
-
-      def create
-        @auditorium = Auditorium.new
-        @auditorium.title = params[:auditorium][:title]
-        @auditorium.capacity = params[:auditorium][:capacity]
-        @auditorium.save!
-      end
+    def create
+      @auditorium = Auditorium.new
+      @auditorium.movie_ids = params[:auditorium][:movie_ids]
+      @auditorium.title = params[:auditorium][:title]
+      @auditorium.capacity = params[:auditorium][:capacity]
+      @auditorium.save!
+      redirect_to admin_auditoria_path
+    end
 
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:

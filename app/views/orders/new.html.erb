@@ -1,29 +1,53 @@
-<h1>Please enter your name, email, and credit card information to purchase a movie ticket!</h1>
+<div class="app-container">
+  <main class="main-content" role="main">
+    <header class="header">
+      <h1 class="header__heading" id="page-title">
+        <%= link_to "tix_flix", movies_path %>
+      </h1>
+    </header>
+    <h2 class="subheading">
+      Please enter your name, email, and credit card information to purchase a movie ticket!
+    </h2>
 
-<%= form_for @order do |f| %>
-  <ul>
-    <% @order.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
+    <% if flash[:error] %>
+      <div class="error-message">
+        <% @order.errors.messages.each do |error| %>
+          <div>
+            <%= error %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :credit_card_number %><br />
-    <%= f.text_field :credit_card_number %>
-  </p>
-  <p>
-    <%= f.label :expiration_date %><br />
-    <%= f.text_field :expiration_date %>
-  </p>
-  <%= hidden_field_tag :showtime, params[:showtime] if params[:showtime] %>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+
+    <div class="order-form">
+      <%= form_for @order do |f| %>
+
+        <label class="order-form-fields">
+          <%= f.label :name %><br />
+          <%= f.text_field :name %>
+        </label>
+        <label class="order-form-fields">
+          <%= f.label :email %><br />
+          <%= f.text_field :email %>
+        </label>
+        <label class="order-form-fields">
+          <%= f.label :credit_card_number %><br />
+          <%= f.text_field :credit_card_number %>
+        </label>
+        <label class="order-form-fields">
+          <%= f.label :expiration_date %>
+          format:, MM/DD/YYYY<br />
+          <%= f.text_field :expiration_date %>
+        </label>
+
+        <%= hidden_field_tag :showtime, params[:showtime] if params[:showtime] %>
+
+        <button class="button">
+          <%= f.submit %>
+        </button>
+
+      <% end %>
+    </div>
+
+  </main>
+</div>

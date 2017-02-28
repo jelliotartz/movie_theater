@@ -10,4 +10,12 @@ module MoviesHelper
   def movie_auditorium_capacity(movie, showtime)
     movie.showtimes.find(showtime.id).auditorium.capacity
   end
+
+  def sold_out?(counter, capacity)
+    counter >= capacity ? true : false
+  end
+
+  def seats_remaining(counter, capacity)
+    capacity - counter
+  end
 end

@@ -1,3 +1,26 @@
-<h1><%= @order.name %></h1>
-<p><%= @order.email %></p>
-<%= link_to "<< Back to Movies", movies_path %>
+<div class="app-container">
+  <main class="main-content" role="main">
+    <header class="header">
+      <h1 class="header__heading" id="page-title">
+        <%= link_to "tix_flix", movies_path %>
+      </h1>
+    </header>
+    <div class="order-receipt">
+      <h1>
+        Thank you, <%= @order.name %>! Here is a receipt for your movie ticket purchase:
+      </h1>
+      <p>
+        Movie: <%= @title %>
+      </p>
+      <p>
+        Showtime: <%= @time %>
+      </p>
+      <p>
+        Auditorium: <%= @auditorium %>
+      </p>
+      <p>
+        A copy of your receipt has been sent to <%= @order.email %>
+      </p>
+    </div>
+  </main>
+</div>

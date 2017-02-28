@@ -38,6 +38,13 @@ It renders the `_table` partial to display details about the resources.
       class: "button",
     ) %>
   </div>
+  <div class="header__actions">
+    <%= link_to(
+      "Back to Main Application",
+      movies_path,
+      class: "button",
+    ) %>
+  </div>
 </header>
 
 <%= render "collection", collection_presenter: page, resources: resources %>

@@ -47,10 +47,11 @@ ActiveRecord::Schema.define(version: 20170226184753) do
 
   create_table "showtimes", force: :cascade do |t|
     t.datetime "time"
-    t.integer  "movie_id",      null: false
-    t.integer  "auditorium_id", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "tickets_sold",  default: 0
+    t.integer  "movie_id",                  null: false
+    t.integer  "auditorium_id",             null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

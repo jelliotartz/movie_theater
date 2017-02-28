@@ -9,7 +9,6 @@ class AuditoriumDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     movies: Field::HasMany,
-    order: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
     capacity: Field::Number,
@@ -26,14 +25,12 @@ class AuditoriumDashboard < Administrate::BaseDashboard
     :title,
     :capacity,
     :movies,
-    :order,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :movies,
-    :order,
     :id,
     :title,
     :capacity,
@@ -46,7 +43,6 @@ class AuditoriumDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :movies,
-    :order,
     :title,
     :capacity,
   ].freeze

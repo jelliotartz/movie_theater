@@ -1,3 +1,57 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+table {
+  border-collapse: separate;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid shade($base-border-color, 25%);
+  text-align: left;
+}
+
+th,
+td {
+  padding: $small-spacing;
+  vertical-align: middle;
+}
+
+td {
+  border-bottom: $base-border;
+  font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures, contextual;
+  font-variant-numeric: lining-nums, tabular-nums;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+
+.collection-data {
+  @include padding(null $base-spacing);
+}
+
+.table__row {
+  background-color: $white;
+  border-left: 2px solid transparent;
+  transition: background-color $base-duration $base-timing;
+
+  &:hover {
+    background-color: $base-background-color;
+    border-left-color: $blue;
+    cursor: pointer;
+  }
+
+  img {
+    max-height: 2em;
+  }
+}
+
+.table__action--destroy {
+  color: $light-red;
+}

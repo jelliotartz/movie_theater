@@ -1,12 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-auditorium_number = [
+# Create 5 auditoria
+auditorium_numbers = [
   "Auditorium 1",
   "Auditorium 2",
   "Auditorium 3",
@@ -14,14 +7,17 @@ auditorium_number = [
   "Auditorium 5"
 ]
 
-capacity = [50, 100, 25, 200, 10]
+capacity = [1, 2, 3, 4, 5]
 
-auditorium_number.each_with_index do |auditorium_title, i|
+auditorium_numbers.each_with_index do |auditorium_title, i|
   Auditorium.find_or_create_by!(title: auditorium_title) do |auditorium|
     auditorium.capacity = capacity[i]
   end
 end
 
+auditoria = Auditorium.all
+
+# Create 5 Movies
 titles = [
   "Manchester by the Sea",
   "Fences",
@@ -35,10 +31,10 @@ titles.each do |title|
 end
 
 movies = Movie.all
-auditoria = Auditorium.all
 
+# Create 20 showtimes, using the movies and auditoria
 20.times do
-  day = rand(1..100)
+  day = rand(1..14)
   hour = rand(1..12)
   Showtime.create!(
     time: Time.zone.now + day.days + hour.hours,
@@ -49,6 +45,7 @@ end
 
 showtimes = Showtime.all
 
+# Create 5 orders, using the showtimes
 5.times do
   Order.create!(
     amount: 10,
@@ -59,4 +56,3 @@ showtimes = Showtime.all
     showtime: showtimes.sample
   )
 end
-

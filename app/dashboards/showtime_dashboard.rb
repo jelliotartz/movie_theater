@@ -26,13 +26,11 @@ class ShowtimeDashboard < Administrate::BaseDashboard
     :time,
     :movie,
     :auditorium,
-    :orders,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :orders,
     :movie,
     :auditorium,
     :id,
@@ -45,7 +43,6 @@ class ShowtimeDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :orders,
     :movie,
     :auditorium,
     :time,

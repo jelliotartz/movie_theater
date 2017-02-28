@@ -12,3 +12,4 @@
 
 .gitignore
 scratch.md
+config/secrets.yml
