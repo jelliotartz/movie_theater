@@ -9,15 +9,18 @@
       Please enter your name, email, and credit card information to purchase a movie ticket!
     </h2>
 
-    <% if flash[:error] %>
-      <div class="error-message">
-        <% @order.errors.messages.each do |error| %>
-          <div>
-            <%= error %>
-          </div>
+  <% if flash[:error] %>
+    <div class="error-message">
+      <% flash[:error].each do |key, value| %>
+        <div>errors for <%= key %>:</div>
+        <% value.each do |error| %>
+          <div><%= error %></div>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+
 
     <div class="order-form">
       <%= form_for @order do |f| %>

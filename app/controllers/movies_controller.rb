@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.joins(:showtimes).group("movies.id").all
   end
 
   def show

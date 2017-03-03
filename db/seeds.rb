@@ -23,7 +23,7 @@ titles = [
   "Fences",
   "Hidden Figures",
   "Moonlight",
-  "The Last Emperor"
+  "Arrival"
 ]
 
 titles.each do |title|
@@ -32,12 +32,11 @@ end
 
 movies = Movie.all
 
-# Create 20 showtimes, using the movies and auditoria
-20.times do
+# Create 10 showtimes, using the movies and auditoria
+10.times do
   day = rand(1..14)
-  hour = rand(1..12)
   Showtime.create!(
-    time: Time.zone.now + day.days + hour.hours,
+    time: ((Time.zone.now + day.days).end_of_day + 1.minute) - rand(1..4).hours,
     movie: movies.sample,
     auditorium: auditoria.sample
   )
@@ -48,7 +47,6 @@ showtimes = Showtime.all
 # Create 5 orders, using the showtimes
 5.times do
   Order.create!(
-    amount: 10,
     name: "Brock McNuggets",
     email: "brock@mail.com",
     credit_card_number: "378282246310005",

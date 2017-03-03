@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170226184753) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "amount"
     t.string   "name"
     t.string   "email"
     t.string   "credit_card_number"

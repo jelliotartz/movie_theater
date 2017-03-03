@@ -10,7 +10,6 @@ class OrderDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     showtime: Field::BelongsTo,
     id: Field::Number,
-    amount: Field::Number,
     name: Field::String,
     email: Field::String,
     credit_card_number: Field::Number,
@@ -26,7 +25,6 @@ class OrderDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :showtime,
-    :amount,
     :name,
   ].freeze
 
@@ -35,7 +33,6 @@ class OrderDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :showtime,
     :id,
-    :amount,
     :name,
     :email,
     :credit_card_number,
@@ -49,7 +46,6 @@ class OrderDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :showtime,
-    :amount,
     :name,
     :email,
     :credit_card_number,
