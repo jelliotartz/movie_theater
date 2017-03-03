@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer     :amount
       t.string      :name
       t.string      :email
-      t.integer     :credit_card_number, :limit => 16
+      t.string      :credit_card_number
       t.date        :expiration_date
 
       t.references  :showtime, null: false
